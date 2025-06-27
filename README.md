@@ -1,13 +1,56 @@
-# React + Vite
+# Social Media Poster – Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the frontend of the **Social Media Poster** application – a tool for posting updates (including text and media) to LinkedIn and Twitter (X) accounts through a single interface.
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🖼️ Post text and media (images/videos)
+- 🔐 OAuth login with Twitter and LinkedIn
+- 🔁 Detects authenticated platforms
+- 📤 Uploads media using `multipart/form-data`
+- ✅ Displays success/failure messages per platform
 
-## Expanding the ESLint configuration
+## 🛠️ Technologies Used
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# social-media-poster
+- React (Vite)
+- Axios
+- CSS Modules
+- FormData for file handling
+
+## 🚀 Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/vrima1221/social-media-poster.git
+cd social-media-poster
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Create .env file
+
+```bash
+VITE_API_URL=your_api_url
+```
+
+### 4. Start the development server
+
+```bash
+npm run dev
+```
+
+🔐 OAuth Flow
+- Login buttons redirect to backend:
+
+  - /auth/linkedin
+
+  - /auth/twitter
+
+- Upon login, the backend redirects back to this frontend.
+
+- Session-based auth is used to persist state.
